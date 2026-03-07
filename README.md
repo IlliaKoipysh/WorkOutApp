@@ -25,3 +25,6 @@ Project created by:
 - Illia Koipysh
 - Yurii Haponiuk
 
+## Status
+Project in development.
+
