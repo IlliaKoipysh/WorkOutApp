@@ -1,5 +1,27 @@
 # WorkOutApp
-Apptication with programs to work out without any equipment based on book "Convict conditioning" written by a guy who was in prison. 
-App is a half-game in "prison-escape" style, made to motivate you to work out at home.
-Even if the indetity of Paul Wade has a lot of doubts - the exercises from book are good.
-Also we'll use basic exercises used in everyday life.
+
+Mobile application with workout programs that require no equipment.
+The exercises are inspired by the book *Convict Conditioning* by Paul Wade.
+
+The app has a light **prison-escape themed gamification** to motivate users to train regularly at home.
+
+Even though the identity of Paul Wade is debated, the exercises presented in the book are effective and based on bodyweight training.
+
+The application will also include basic functional exercises used in everyday life.
+
+## Features
+- Bodyweight workout programs
+- Exercise progression levels
+- Training timer
+- Workout history
+- Gamified motivation system
+
+## Technologies
+- Mobile application
+- Android/Kotlin
+
+## Authors
+Project created by:
+- Illia Koipysh
+- Yurii Haponiuk
+
