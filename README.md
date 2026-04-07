@@ -9,6 +9,8 @@ Even though the identity of Paul Wade is debated, the exercises presented in the
 
 The application will also include basic functional exercises used in everyday life.
 
+Some media files are generated with AI
+
 ## Features
 - Bodyweight workout programs
 - Exercise progression levels
