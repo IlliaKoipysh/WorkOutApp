@@ -1,88 +1,43 @@
-**Frontend**
-Main Menu:
-Header:
-  POwitanie: Welcome, Nickname;
-  Cel użytkownika: Strength
-  Progress bar: [██████░░░░] 60% (3/5 workouts)
-GRID MENU:
-ikonki:
--minimalistyczne ale surowe, lekko industrialne;
-Sekcje(nazwy ikonek):
-[ 1.Krokomierz ]   [ 2.Statystyki ]
-[ 3.Kardio     ]   [ 4.Ćwiczenia  ]
-[ 5.Dieta      ]   [ 6.(np. Profil / Cele) ]
-1. Ikona: 👣 (ślady stóp)
-Nazwa: Steps
-Co pokazuje (mały tekst pod spodem):
-6,234 / 8,000
-2. Statystyki
-Ikona:  (wykres słupkowy)
-Nazwa: Progress
-Opis:
-Last workout: 2 days ago
-3.Kardio
-Ikona: (serce)
-Nazwa: Cardio
-Opis:
-Quick workouts
-4.Ćwiczenia
-Ikona: (biceps)
-Nazwa: Exercises
-Opis:
-By muscle group
-5.Dieta
-Ikona: (sztucce)
-Nazwa: Diet
-Opis:
-Simple tips about diet
-6.Account/Settings
-Ikona: 
-Nazwa: Settings / Profile
-Opis:
-Account & preferences
+# Contributing
 
+## Branches
 
+* main – stable version
+* develop – current development
+* feature/... – new features
 
-Pod gridem:
-3. SAVE STATE BUTTON
+Example:
 
-Pod gridem:
+* feature/login
+* feature/timer
+* feature/exercises
 
-[SAVE PROGRESS]
+---
 
-->duży przycisk, wyraźny
-->np. czerwony / pomarańczowy (motywacja)
+## Workflow
 
-4. MOTIVATION / TIP (opcjonalnie )
+1. Create a new branch from `develop`
+2. Implement your feature
+3. Commit your changes
+4. Create a Pull Request to `develop`
+5. Wait for review and merge
 
-Mały tekst pod przyciskiem:
+---
 
-"Consistency beats intensity."
+## Commits
 
-albo:
+Use clear commit messages:
 
-"You don’t need equipment to get strong."
+* feat: add workout timer
+* feat: add exercise list
+* fix: timer reset bug
+* docs: update README
 
-Style:
-tło: ciemne (beton / industrial vibe)
-kafelki:
-lekko przezroczyste
-zaokrąglone
-tekst:
-biały / jasny
-akcent:
-czerwony / pomarańczowy
+---
 
-Schemat:
-[ Welcome + Goal ]
-[ Progress bar ]
+## Rules
 
-[ Steps ]     [ Progress ]
-[ Cardio ]    [ Exercises ]
-[ Diet ]      [ Settings ]
-
-[ SAVE PROGRESS ]
-
-[ Quote ]
-
-[ Ad ]
+* Do not push directly to `main`
+* One task = one branch
+* One branch = one feature
+* Keep code clean and readable

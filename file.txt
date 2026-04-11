@@ -1,0 +1,5 @@
+Login (Register). login, haslo, buttons: sign in, sign up, forgot passwd
+Rejestracja - username, e-mail, haslo, powtórz haslo
+MainActivity- opisany w Contributting.md
+Krokomierz - ile kroków, ile metrów itd
+Kardio - 
