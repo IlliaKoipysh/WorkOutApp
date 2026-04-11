@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="TextStyle_40sp">
+        <item name="android:textSize">40sp</item>
+        <item name="android:textColor">#FFFFF8F8</item>
+    </style>
+    <style name="TextStyle_20sp">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">#FFFFFFFF</item>
+        <item name="android:fontFamily">Inter</item>
+    </style>
+    <style name="TextStyle_16sp">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#FFFFFFFF</item>
+        <item name="android:fontFamily">Inter</item>
+    </style>
+    <style name="TextStyle_24sp">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">#FFFFF8F8</item>
+        <item name="android:fontFamily">Inter</item>
+    </style>
+</resources>
