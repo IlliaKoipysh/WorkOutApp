@@ -17,7 +17,7 @@
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:background="@drawable/bg_orange_button"
-            android:src="@drawable/ic_arrow_back"
+            android:src="@drawable/ic_back"
             android:contentDescription="Back"
             app:tint="@android:color/black"
             app:layout_constraintStart_toStartOf="parent"
@@ -81,7 +81,9 @@
                 android:gravity="center"
                 android:orientation="vertical">
 
+                <!-- Placeholder only. Kotlin must set this from completedWorkoutDays. -->
                 <TextView
+                    android:id="@+id/tvCompletedWorkoutDaysValue"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="5"
@@ -90,6 +92,7 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/tvCompletedWorkoutDaysLabel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Days"
@@ -108,6 +111,7 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/tvLastWorkoutLabel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Last workout"
@@ -115,7 +119,9 @@
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
+                <!-- Placeholder only. Kotlin must set this from lastWorkoutDaysAgo. -->
                 <TextView
+                    android:id="@+id/tvLastWorkoutDaysValue"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="2"
@@ -124,6 +130,7 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/tvLastWorkoutUnitLabel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="days ago"
@@ -134,41 +141,108 @@
 
         </LinearLayout>
 
-        <!-- FILTERS -->
+        <!-- FILTERS - Kotlin can later update selected/unselected backgrounds on click. -->
         <LinearLayout
             android:id="@+id/filterLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="18dp"
-            android:orientation="horizontal"
             android:gravity="center"
+            android:orientation="vertical"
             app:layout_constraintTop_toBottomOf="@id/cardsLayout"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent">
 
-            <TextView
-                android:layout_width="130dp"
-                android:layout_height="30dp"
-                android:background="#3A2A20"
+            <LinearLayout
+                android:id="@+id/progressMetricTabs"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:background="@drawable/bg_spinner"
                 android:gravity="center"
-                android:text="▼ Steps"
-                android:textColor="#C8B6A6"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+                android:orientation="horizontal"
+                android:padding="4dp"
+                android:weightSum="3">
 
-            <Space
-                android:layout_width="40dp"
-                android:layout_height="1dp" />
+                <TextView
+                    android:id="@+id/btnFilterSteps"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_orange_button"
+                    android:gravity="center"
+                    android:text="Steps"
+                    android:textColor="@android:color/black"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
 
-            <TextView
-                android:layout_width="130dp"
-                android:layout_height="30dp"
-                android:background="#3A2A20"
+                <TextView
+                    android:id="@+id/btnFilterDistance"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Distance"
+                    android:textColor="#C8B6A6"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/btnFilterCalories"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Calories"
+                    android:textColor="#C8B6A6"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/progressRangeTabs"
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg_spinner"
                 android:gravity="center"
-                android:text="▼ Week"
-                android:textColor="#C8B6A6"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+                android:orientation="horizontal"
+                android:padding="4dp"
+                android:weightSum="3">
+
+                <TextView
+                    android:id="@+id/btnRangeWeek"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_orange_button"
+                    android:gravity="center"
+                    android:text="Week"
+                    android:textColor="@android:color/black"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/btnRangeMonth"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Month"
+                    android:textColor="#C8B6A6"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/btnRangeYear"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Year"
+                    android:textColor="#C8B6A6"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
         </LinearLayout>
 
         <!-- CHART CARD -->
@@ -192,14 +266,13 @@
                 android:textSize="14sp"
                 android:textStyle="bold" />
 
-            <!-- tutaj najlepiej później dać BarChart z MPAndroidChart -->
-            <ImageView
-                android:id="@+id/imgFakeChart"
+            <!-- Kotlin must bind progress chart entries from real progress history. -->
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/progressChart"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:scaleType="fitXY"
-                android:src="@drawable/progress_chart_placeholder" />
+                android:layout_marginTop="8dp" />
         </LinearLayout>
 
         <!-- TARGETS -->
@@ -228,7 +301,9 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent">
 
+            <!-- Placeholder targets only. Kotlin must set target values from user/device data. -->
             <TextView
+                android:id="@+id/tvProgressTargetStepsValue"
                 android:layout_width="0dp"
                 android:layout_height="68dp"
                 android:layout_weight="1"
@@ -241,6 +316,7 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/tvProgressTargetDistanceValue"
                 android:layout_width="0dp"
                 android:layout_height="68dp"
                 android:layout_weight="1"
@@ -253,6 +329,7 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/tvProgressTargetCaloriesValue"
                 android:layout_width="0dp"
                 android:layout_height="68dp"
                 android:layout_weight="1"

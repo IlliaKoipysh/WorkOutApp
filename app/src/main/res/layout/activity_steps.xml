@@ -4,12 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    android:background="@android:color/black">
+    android:background="@drawable/theme2">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/theme2">
+        android:layout_height="wrap_content">
 
         <!-- Dark atmospheric overlay to match premium aesthetic -->
         <View
@@ -97,6 +96,7 @@
                 android:contentDescription="Steps Icon"/>
 
             <TextView
+                android:id="@+id/tvStepsLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Steps"
@@ -105,7 +105,9 @@
                 android:textStyle="bold"
                 android:layout_marginBottom="4dp"/>
 
+            <!-- Placeholder only. Kotlin must set this from currentSteps and targetSteps. -->
             <TextView
+                android:id="@+id/tvStepsValue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="6,234/8,000"
@@ -136,6 +138,7 @@
                 android:contentDescription="Distance Icon"/>
 
             <TextView
+                android:id="@+id/tvDistanceLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Km"
@@ -144,7 +147,9 @@
                 android:textStyle="bold"
                 android:layout_marginBottom="4dp"/>
 
+            <!-- Placeholder only. Kotlin must set this from currentDistanceKm and targetDistanceKm. -->
             <TextView
+                android:id="@+id/tvDistanceValue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="5.1/10"
@@ -175,6 +180,7 @@
                 android:contentDescription="Calories Icon"/>
 
             <TextView
+                android:id="@+id/tvCaloriesLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Calories"
@@ -183,7 +189,9 @@
                 android:textStyle="bold"
                 android:layout_marginBottom="4dp"/>
 
+            <!-- Placeholder only. Kotlin must set this from currentCalories and targetCalories. -->
             <TextView
+                android:id="@+id/tvCaloriesValue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="2999/3000"
@@ -191,33 +199,108 @@
                 android:textSize="13sp"/>
         </LinearLayout>
 
-        <!-- DROPDOWNS -->
-
-        <Spinner
-            android:id="@+id/statSpinner"
+        <!-- FILTERS - Kotlin can later update selected/unselected backgrounds on click. -->
+        <LinearLayout
+            android:id="@+id/stepsMetricTabs"
             android:layout_width="0dp"
-            android:layout_height="48dp"
+            android:layout_height="42dp"
             android:layout_marginTop="20dp"
             android:layout_marginStart="16dp"
-            android:layout_marginEnd="8dp"
-            android:background="@drawable/bg_spinner"
-            android:popupBackground="#E6151313"
-            app:layout_constraintTop_toBottomOf="@id/stepsCard"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/timeSpinner"/>
-
-        <Spinner
-            android:id="@+id/timeSpinner"
-            android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="8dp"
             android:layout_marginEnd="16dp"
             android:background="@drawable/bg_spinner"
-            android:popupBackground="#E6151313"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="4dp"
+            android:weightSum="3"
             app:layout_constraintTop_toBottomOf="@id/stepsCard"
-            app:layout_constraintStart_toEndOf="@id/statSpinner"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <TextView
+                android:id="@+id/btnFilterSteps"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/bg_orange_button"
+                android:gravity="center"
+                android:text="Steps"
+                android:textColor="@android:color/black"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/btnFilterDistance"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Distance"
+                android:textColor="#C8B6A6"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/btnFilterCalories"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Calories"
+                android:textColor="#C8B6A6"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/stepsRangeTabs"
+            android:layout_width="0dp"
+            android:layout_height="38dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/bg_spinner"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="4dp"
+            android:weightSum="3"
+            app:layout_constraintTop_toBottomOf="@id/stepsMetricTabs"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <TextView
+                android:id="@+id/btnRangeWeek"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/bg_orange_button"
+                android:gravity="center"
+                android:text="Week"
+                android:textColor="@android:color/black"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/btnRangeMonth"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Month"
+                android:textColor="#C8B6A6"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/btnRangeYear"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Year"
+                android:textColor="#C8B6A6"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+        </LinearLayout>
 
         <!-- CHART CONTAINER -->
 
@@ -230,7 +313,7 @@
             android:layout_marginTop="16dp"
             android:background="@drawable/bg_chart_container"
             android:padding="16dp"
-            app:layout_constraintTop_toBottomOf="@id/statSpinner"
+            app:layout_constraintTop_toBottomOf="@id/stepsRangeTabs"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent">
 
@@ -291,6 +374,7 @@
             app:layout_constraintHorizontal_chainStyle="spread">
 
             <TextView
+                android:id="@+id/tvTargetStepsValue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="8K"
@@ -299,6 +383,7 @@
                 android:textColor="#FFFFFF"/>
 
             <TextView
+                android:id="@+id/tvTargetStepsLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Steps"
@@ -321,6 +406,7 @@
             app:layout_constraintEnd_toStartOf="@id/targetCalCard">
 
             <TextView
+                android:id="@+id/tvTargetDistanceValue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="10"
@@ -329,6 +415,7 @@
                 android:textColor="#FFFFFF"/>
 
             <TextView
+                android:id="@+id/tvTargetDistanceLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="km"
@@ -351,6 +438,7 @@
             app:layout_constraintEnd_toEndOf="parent">
 
             <TextView
+                android:id="@+id/tvTargetCaloriesValue"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="3K"
@@ -359,6 +447,7 @@
                 android:textColor="#FFFFFF"/>
 
             <TextView
+                android:id="@+id/tvTargetCaloriesLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="calories"

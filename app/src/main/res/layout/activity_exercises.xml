@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/exercisesRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/theme2"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <View
+            android:id="@+id/backgroundOverlay"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="#AA000000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/btnExercisesBack"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/bg_orange_button"
+            android:contentDescription="Back"
+            android:src="@drawable/ic_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@android:color/black" />
+
+        <TextView
+            android:id="@+id/tvExercisesTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_marginEnd="8dp"
+            android:text="Exercises"
+            android:textColor="@android:color/white"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/btnExercisesBack"
+            app:layout_constraintEnd_toStartOf="@id/btnExercisesEdit"
+            app:layout_constraintStart_toEndOf="@id/btnExercisesBack"
+            app:layout_constraintTop_toTopOf="@id/btnExercisesBack" />
+
+        <ImageButton
+            android:id="@+id/btnExercisesEdit"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/bg_brown_button"
+            android:contentDescription="Edit"
+            android:src="@drawable/ic_edit"
+            app:layout_constraintEnd_toStartOf="@id/btnExercisesSave"
+            app:layout_constraintTop_toTopOf="@id/btnExercisesBack"
+            app:tint="@android:color/black" />
+
+        <ImageButton
+            android:id="@+id/btnExercisesSave"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/bg_brown_button"
+            android:contentDescription="Save"
+            android:src="@drawable/ic_save"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/btnExercisesBack"
+            app:tint="@android:color/black" />
+
+        <GridLayout
+            android:id="@+id/exercisesGrid"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:alignmentMode="alignMargins"
+            android:columnCount="2"
+            android:rowCount="3"
+            android:useDefaultMargins="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnExercisesBack">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btnBiceps"
+                android:layout_width="0dp"
+                android:layout_height="190dp"
+                android:layout_columnWeight="1"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="16dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground"
+                app:cardBackgroundColor="#CC111111"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp"
+                app:strokeColor="#F3A047"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imgBiceps"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:contentDescription="Biceps"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/img1" />
+
+                    <TextView
+                        android:id="@+id/tvBiceps"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:gravity="center"
+                        android:text="Biceps"
+                        android:textColor="@android:color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btnTricepsChest"
+                android:layout_width="0dp"
+                android:layout_height="190dp"
+                android:layout_columnWeight="1"
+                android:layout_marginStart="8dp"
+                android:layout_marginBottom="16dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground"
+                app:cardBackgroundColor="#CC111111"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp"
+                app:strokeColor="#F3A047"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imgTricepsChest"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:contentDescription="Triceps and Chest"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/img2" />
+
+                    <TextView
+                        android:id="@+id/tvTricepsChest"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:gravity="center"
+                        android:text="Triceps &amp; Chest"
+                        android:textColor="@android:color/white"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btnAbs"
+                android:layout_width="0dp"
+                android:layout_height="190dp"
+                android:layout_columnWeight="1"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="16dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground"
+                app:cardBackgroundColor="#CC111111"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp"
+                app:strokeColor="#F3A047"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imgAbs"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:contentDescription="Abs"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/img3" />
+
+                    <TextView
+                        android:id="@+id/tvAbs"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:gravity="center"
+                        android:text="Abs"
+                        android:textColor="@android:color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btnLegs"
+                android:layout_width="0dp"
+                android:layout_height="190dp"
+                android:layout_columnWeight="1"
+                android:layout_marginStart="8dp"
+                android:layout_marginBottom="16dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground"
+                app:cardBackgroundColor="#CC111111"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp"
+                app:strokeColor="#F3A047"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imgLegs"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:contentDescription="Legs"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/img4" />
+
+                    <TextView
+                        android:id="@+id/tvLegs"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:gravity="center"
+                        android:text="Legs"
+                        android:textColor="@android:color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btnBack"
+                android:layout_width="0dp"
+                android:layout_height="190dp"
+                android:layout_columnWeight="1"
+                android:layout_marginEnd="8dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground"
+                app:cardBackgroundColor="#CC111111"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp"
+                app:strokeColor="#F3A047"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imgBack"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:contentDescription="Back"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/img5" />
+
+                    <TextView
+                        android:id="@+id/tvBack"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:gravity="center"
+                        android:text="Back"
+                        android:textColor="@android:color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btnLoseWeight"
+                android:layout_width="0dp"
+                android:layout_height="190dp"
+                android:layout_columnWeight="1"
+                android:layout_marginStart="8dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground"
+                app:cardBackgroundColor="#CC111111"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp"
+                app:strokeColor="#F3A047"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imgLoseWeight"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:contentDescription="Lose Weight"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/img6" />
+
+                    <TextView
+                        android:id="@+id/tvLoseWeight"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:gravity="center"
+                        android:text="Lose Weight"
+                        android:textColor="@android:color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+        </GridLayout>
+
+        <TextView
+            android:id="@+id/tvExercisesQuote"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="26dp"
+            android:layout_marginBottom="28dp"
+            android:gravity="center"
+            android:text="The only bad workout is the one you didn’t do"
+            android:textColor="#E0E0E0"
+            android:textSize="16sp"
+            android:textStyle="italic"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/exercisesGrid" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
