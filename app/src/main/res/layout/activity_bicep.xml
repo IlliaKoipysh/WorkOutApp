@@ -105,7 +105,7 @@
                     android:layout_marginTop="12dp"
                     android:contentDescription="Chin-ups composite instruction"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/placeholder_exercise" />
+                    android:src="@drawable/bicep1" />
 
                 <TextView
                     android:id="@+id/tvBicepsExercise1Caption"
@@ -144,7 +144,7 @@
                     android:layout_marginTop="12dp"
                     android:contentDescription="Bottle curls composite instruction"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/placeholder_exercise" />
+                    android:src="@drawable/bicep2" />
 
                 <TextView
                     android:id="@+id/tvBicepsExercise2Caption"
@@ -192,7 +192,7 @@
                     android:layout_marginTop="12dp"
                     android:contentDescription="Towel biceps curl composite instruction"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/placeholder_exercise" />
+                    android:src="@drawable/bicep3" />
 
                 <TextView
                     android:id="@+id/tvBicepsExercise3Caption"
@@ -232,7 +232,7 @@
                     android:layout_marginTop="12dp"
                     android:contentDescription="Isometric biceps hold composite instruction"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/placeholder_exercise" />
+                    android:src="@drawable/bicep4" />
 
                 <TextView
                     android:id="@+id/tvBicepsExercise4Caption"
