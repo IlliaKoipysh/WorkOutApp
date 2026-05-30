@@ -77,15 +77,6 @@
             android:paddingStart="8dp"
             android:paddingEnd="8dp" />
 
-        <TextView
-            android:id="@+id/forgotPassword"
-            android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:gravity="end"
-            android:text="Forgot password?"
-            android:textColor="#3FA9F5"
-            android:textSize="12sp" />
-
         <Button
             android:id="@+id/btnLogin"
             android:layout_width="match_parent"

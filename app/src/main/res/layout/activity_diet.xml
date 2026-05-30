@@ -95,63 +95,42 @@
                     android:id="@+id/tvCalorieCalculatorTitle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="CALORIE CALCULATOR"
+                    android:text="CALORIE INPUT"
                     android:textColor="#F3A047"
                     android:textSize="15sp"
                     android:textStyle="bold" />
 
-                <!-- Placeholder values only. Kotlin should set these from caloriesConsumed, caloriesBurned, caloriesRemaining, dailyCalorieGoal and averageDailyBalance. -->
+                <!-- Kotlin should read this input, add it to today's calorie cache, then refresh the Today and Weekly values. -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="14dp"
-                    android:orientation="vertical">
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
 
-                    <TextView
-                        android:id="@+id/tvCaloriesConsumedValue"
-                        android:layout_width="match_parent"
-                        android:layout_height="44dp"
-                        android:gravity="center_vertical"
-                        android:text="Calories Consumed    -- kcal"
+                    <EditText
+                        android:id="@+id/etMealCalories"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/dropdown_background"
+                        android:hint="Meal calories"
+                        android:inputType="number"
+                        android:paddingStart="14dp"
+                        android:paddingEnd="14dp"
                         android:textColor="@android:color/white"
-                        android:textSize="16sp"
-                        android:textStyle="bold" />
+                        android:textColorHint="#BDBDBD"
+                        android:textSize="15sp" />
 
-                    <TextView
-                        android:id="@+id/tvCaloriesBurnedValue"
-                        android:layout_width="match_parent"
-                        android:layout_height="44dp"
-                        android:gravity="center_vertical"
-                        android:text="Calories Burned    -- kcal"
-                        android:textColor="#E0E0E0"
-                        android:textSize="16sp" />
-
-                    <TextView
-                        android:id="@+id/tvCaloriesRemainingValue"
-                        android:layout_width="match_parent"
-                        android:layout_height="44dp"
-                        android:gravity="center_vertical"
-                        android:text="Calories Remaining    -- kcal"
-                        android:textColor="#E0E0E0"
-                        android:textSize="16sp" />
-
-                    <TextView
-                        android:id="@+id/tvDailyGoalValue"
-                        android:layout_width="match_parent"
-                        android:layout_height="44dp"
-                        android:gravity="center_vertical"
-                        android:text="Daily Goal    -- kcal"
-                        android:textColor="#E0E0E0"
-                        android:textSize="16sp" />
-
-                    <TextView
-                        android:id="@+id/tvAverageDailyBalanceValue"
-                        android:layout_width="match_parent"
-                        android:layout_height="44dp"
-                        android:gravity="center_vertical"
-                        android:text="Average Daily Balance    -- kcal"
-                        android:textColor="#F3A047"
-                        android:textSize="16sp"
+                    <Button
+                        android:id="@+id/btnAddMealCalories"
+                        android:layout_width="88dp"
+                        android:layout_height="48dp"
+                        android:layout_marginStart="10dp"
+                        android:background="@drawable/bg_orange_button"
+                        android:text="Add"
+                        android:textAllCaps="false"
+                        android:textColor="@android:color/black"
                         android:textStyle="bold" />
                 </LinearLayout>
             </LinearLayout>
@@ -213,6 +192,16 @@
                     android:layout_height="42dp"
                     android:gravity="center_vertical"
                     android:text="Daily Balance    -- kcal"
+                    android:textColor="#F3A047"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvAverageDailyBalanceValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="42dp"
+                    android:gravity="center_vertical"
+                    android:text="Average Daily Balance    -- kcal"
                     android:textColor="#F3A047"
                     android:textSize="16sp"
                     android:textStyle="bold" />

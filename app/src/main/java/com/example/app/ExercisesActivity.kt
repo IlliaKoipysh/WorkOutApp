@@ -1,11 +1,10 @@
 package com.example.app
 
+import android.content.Intent
 import android.os.Bundle
-import android.widget.ImageButton
-import android.widget.Toast
-import com.google.android.material.card.MaterialCardView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.card.MaterialCardView
 
 class ExercisesActivity : AppCompatActivity() {
 
@@ -14,32 +13,30 @@ class ExercisesActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_exercises)
 
-        findViewById<ImageButton>(R.id.btnExercisesBack).setOnClickListener {
-            finish()
-        }
+        bindTopBar(R.id.btnExercisesBack, R.id.btnExercisesEdit, R.id.btnExercisesSave)
 
         findViewById<MaterialCardView>(R.id.btnBiceps).setOnClickListener {
-            Toast.makeText(this, "Biceps", Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this, BicepActivity::class.java))
         }
 
         findViewById<MaterialCardView>(R.id.btnTricepsChest).setOnClickListener {
-            Toast.makeText(this, "Triceps & Chest", Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this, TricepsChestActivity::class.java))
         }
 
         findViewById<MaterialCardView>(R.id.btnAbs).setOnClickListener {
-            Toast.makeText(this, "Abs", Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this, AbsActivity::class.java))
         }
 
         findViewById<MaterialCardView>(R.id.btnLegs).setOnClickListener {
-            Toast.makeText(this, "Legs", Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this, LegsActivity::class.java))
         }
 
         findViewById<MaterialCardView>(R.id.btnBack).setOnClickListener {
-            Toast.makeText(this, "Back", Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this, BackActivity::class.java))
         }
 
         findViewById<MaterialCardView>(R.id.btnLoseWeight).setOnClickListener {
-            Toast.makeText(this, "Lose Weight", Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this, LoseWeightActivity::class.java))
         }
     }
 }

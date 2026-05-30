@@ -112,15 +112,15 @@
                 android:id="@+id/radioStrength"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Strength"
+                android:text="Build Muscle"
                 android:textColor="#FFFFFF"
                 android:buttonTint="#FFFFFF" />
 
             <RadioButton
-                android:id="@+id/radioEndurance"
+                android:id="@+id/radioGeneralFitness"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Endurance"
+                android:text="General Fitness"
                 android:textColor="#FFFFFF"
                 android:buttonTint="#FFFFFF" />
 
@@ -128,7 +128,7 @@
                 android:id="@+id/radioWeightLoss"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Weight loss"
+                android:text="Lose Weight"
                 android:textColor="#FFFFFF"
                 android:buttonTint="#FFFFFF" />
         </RadioGroup>
