@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+  <!-- Outer gauge arc -->
+  <path
+      android:strokeColor="#FFF3A047"
+      android:strokeWidth="2.5"
+      android:strokeLineCap="round"
+      android:pathData="M5.64,18.36A9,9 0,1,1 18.36,18.36"/>
+  <!-- Tick marks at the top -->
+  <path
+      android:fillColor="#FFF3A047"
+      android:pathData="M12,2.5a1,1 0,0,1 1,1v1.5a1,1 0,0,1 -2,0V3.5a1,1 0,0,1 1,-1z"/>
+  <!-- Central pivot -->
+  <path
+      android:fillColor="#FFF3A047"
+      android:pathData="M12,11c-1.1,0 -2,0.9 -2,2s0.9,2 2,2s2,-0.9 2,-2s-0.9,-2 -2,-2z"/>
+  <!-- Needle pointing to the upper right -->
+  <path
+      android:strokeColor="#FFF3A047"
+      android:strokeWidth="2"
+      android:strokeLineCap="round"
+      android:pathData="M12,13 L17.5,7.5"/>
+</vector>

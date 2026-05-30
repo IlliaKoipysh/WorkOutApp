@@ -1,6 +1,283 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/theme2"
+    android:fillViewport="true">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="18dp">
+
+        <!-- TOP BAR -->
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/bg_orange_button"
+            android:src="@drawable/ic_arrow_back"
+            android:contentDescription="Back"
+            app:tint="@android:color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Progress"
+            android:textColor="@android:color/white"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            android:layout_marginStart="14dp"
+            app:layout_constraintStart_toEndOf="@id/btnBack"
+            app:layout_constraintTop_toTopOf="@id/btnBack"
+            app:layout_constraintBottom_toBottomOf="@id/btnBack" />
+
+        <ImageButton
+            android:id="@+id/btnEdit"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/bg_brown_button"
+            android:src="@drawable/ic_edit"
+            android:contentDescription="Edit"
+            app:tint="@android:color/black"
+            app:layout_constraintEnd_toStartOf="@id/btnSave"
+            app:layout_constraintTop_toTopOf="@id/btnBack"
+            android:layout_marginEnd="10dp" />
+
+        <ImageButton
+            android:id="@+id/btnSave"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/bg_brown_button"
+            android:src="@drawable/ic_save"
+            android:contentDescription="Save"
+            app:tint="@android:color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/btnBack" />
+
+        <!-- CARDS -->
+        <LinearLayout
+            android:id="@+id/cardsLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:weightSum="2"
+            app:layout_constraintTop_toBottomOf="@id/btnBack"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="135dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="14dp"
+                android:background="@drawable/bg_progress_card"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="5"
+                    android:textColor="#FFA33A"
+                    android:textSize="78sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Days"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="135dp"
+                android:layout_weight="1"
+                android:layout_marginStart="14dp"
+                android:background="@drawable/bg_progress_card"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Last workout"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2"
+                    android:textColor="#FFA33A"
+                    android:textSize="70sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="days ago"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- FILTERS -->
+        <LinearLayout
+            android:id="@+id/filterLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@id/cardsLayout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <TextView
+                android:layout_width="130dp"
+                android:layout_height="30dp"
+                android:background="#3A2A20"
+                android:gravity="center"
+                android:text="▼ Steps"
+                android:textColor="#C8B6A6"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <Space
+                android:layout_width="40dp"
+                android:layout_height="1dp" />
+
+            <TextView
+                android:layout_width="130dp"
+                android:layout_height="30dp"
+                android:background="#3A2A20"
+                android:gravity="center"
+                android:text="▼ Week"
+                android:textColor="#C8B6A6"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- CHART CARD -->
+        <LinearLayout
+            android:id="@+id/chartCard"
+            android:layout_width="0dp"
+            android:layout_height="225dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_chart_card"
+            android:orientation="vertical"
+            android:padding="12dp"
+            app:layout_constraintTop_toBottomOf="@id/filterLayout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="WEEK STATS"
+                android:textColor="#B88432"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <!-- tutaj najlepiej później dać BarChart z MPAndroidChart -->
+            <ImageView
+                android:id="@+id/imgFakeChart"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:scaleType="fitXY"
+                android:src="@drawable/progress_chart_placeholder" />
+        </LinearLayout>
+
+        <!-- TARGETS -->
+        <TextView
+            android:id="@+id/tvTargets"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Targets"
+            android:textColor="@android:color/white"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toBottomOf="@id/chartCard"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/targetsLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:weightSum="3"
+            app:layout_constraintTop_toBottomOf="@id/tvTargets"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="68dp"
+                android:layout_weight="1"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/bg_small_target"
+                android:gravity="center"
+                android:text="8K\nSteps"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="68dp"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="10dp"
+                android:background="@drawable/bg_small_target"
+                android:gravity="center"
+                android:text="10\nkm"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="68dp"
+                android:layout_weight="1"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/bg_small_target"
+                android:gravity="center"
+                android:text="3K\ncalories"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvQuote"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:gravity="center"
+            android:text="the body achieves what the mind\nbelieves"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textStyle="italic"
+            app:layout_constraintTop_toBottomOf="@id/targetsLayout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

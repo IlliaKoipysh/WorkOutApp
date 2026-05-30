@@ -3,7 +3,7 @@
     <string name="app_name">MyApp</string>
     <string name="welcome_username">Welcome,username</string>
     <string name="steps">Steps</string>
-    <string name="6_234_8_000">6,234/8,000</string>
+    <string name="string_6_234_8_000">6,234/8,000</string>
     <string name="progress">Progress</string>
     <string name="last_workout__2_days_ago">Last workout:
 2 days ago</string>
@@ -17,7 +17,7 @@
     <string name="account___preferences">Account &amp;
 Preferences</string>
     <string name="goal__strength">Goal: Strength</string>
-    <string name="60__3_5_workouts">60%(3/5 workouts</string>
+    <string name="string_60__3_5_workouts">60%(3/5 workouts</string>
     <string name="consistency_beats_intensity">Consistency beats intensity</string>
     <string name="save">SAVE PROGRESS</string>
 </resources>

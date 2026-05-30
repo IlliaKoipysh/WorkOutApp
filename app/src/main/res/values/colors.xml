@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="white">#00FFFFFF</color>
+    <color name="white_trans">#00FFFFFF</color>
     <color name="color_89_63_44">#8F593F2C</color>
     <color name="black">#FF000000</color>
     <color name="color_101_99_99">#FF656363</color>
