@@ -4,8 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
-import android.widget.RadioButton
 import android.widget.RadioGroup
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 
@@ -23,44 +23,31 @@ class RegistrationActivity : AppCompatActivity() {
         val btnCreate = findViewById<Button>(R.id.btnCreateAccount)
 
         btnCreate.setOnClickListener {
-
             val user = username.text.toString().trim()
             val pass = password.text.toString().trim()
             val confirm = confirmPassword.text.toString().trim()
 
             if (user.isEmpty()) {
-                showTopMessage("Enter username")
+                Toast.makeText(this, "Enter username", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
             if (pass.isEmpty()) {
-                showTopMessage("Enter password")
+                Toast.makeText(this, "Enter password", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
             if (pass != confirm) {
-                showTopMessage("Passwords do not match")
+                Toast.makeText(this, "Passwords do not match", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            val selectedGoalId = goalGroup.checkedRadioButtonId
-            if (selectedGoalId == -1) {
-                showTopMessage("Select a goal")
+            if (goalGroup.checkedRadioButtonId == -1) {
+                Toast.makeText(this, "Select a goal", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            val selectedGoal = findViewById<RadioButton>(selectedGoalId).text.toString()
-            UserStorage.saveUser(
-                this,
-                LocalUser(
-                    username = user,
-                    passwordHash = UserStorage.hashPassword(pass),
-                    goal = selectedGoal,
-                    isLoggedIn = true
-                )
-            )
-
-            showTopMessage("Account created")
+            Toast.makeText(this, "Account created", Toast.LENGTH_SHORT).show()
             startActivity(Intent(this, MainActivity::class.java))
             finish()
         }
