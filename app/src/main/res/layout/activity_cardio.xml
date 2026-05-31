@@ -1,0 +1,489 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardioRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/theme2"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <View
+            android:id="@+id/backgroundOverlay"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="#B0000000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/btnCardioBack"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/bg_orange_button"
+            android:contentDescription="Back"
+            android:src="@drawable/ic_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@android:color/black" />
+
+        <TextView
+            android:id="@+id/tvCardioTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_marginEnd="8dp"
+            android:text="Cardio"
+            android:textColor="@android:color/white"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/btnCardioBack"
+            app:layout_constraintEnd_toStartOf="@id/btnCardioEdit"
+            app:layout_constraintStart_toEndOf="@id/btnCardioBack"
+            app:layout_constraintTop_toTopOf="@id/btnCardioBack" />
+
+        <ImageButton
+            android:id="@+id/btnCardioEdit"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/bg_brown_button"
+            android:contentDescription="Edit"
+            android:src="@drawable/ic_edit"
+            app:layout_constraintEnd_toStartOf="@id/btnCardioSave"
+            app:layout_constraintTop_toTopOf="@id/btnCardioBack"
+            app:tint="@android:color/black" />
+
+        <ImageButton
+            android:id="@+id/btnCardioSave"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/bg_brown_button"
+            android:contentDescription="Save"
+            android:src="@drawable/ic_save"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/btnCardioBack"
+            app:tint="@android:color/black" />
+
+        <LinearLayout
+            android:id="@+id/cardioStatsLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="26dp"
+            android:baselineAligned="false"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnCardioBack">
+
+            <LinearLayout
+                android:id="@+id/cardAvgHeartRate"
+                android:layout_width="0dp"
+                android:layout_height="118dp"
+                android:layout_marginEnd="6dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_card_stats"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <TextView
+                    android:id="@+id/tvAvgHeartRateLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Avg Heart Rate"
+                    android:textColor="@android:color/white"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+                <!-- Placeholder only. Kotlin must set this from avgHeartRate / sensors / Health APIs. -->
+                <TextView
+                    android:id="@+id/tvAvgHeartRateValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="-- bpm"
+                    android:textColor="#FFA33A"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/cardTotalTime"
+                android:layout_width="0dp"
+                android:layout_height="118dp"
+                android:layout_marginHorizontal="6dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_card_stats"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <TextView
+                    android:id="@+id/tvTotalTimeLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Total Time"
+                    android:textColor="@android:color/white"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+                <!-- Placeholder only. Kotlin must set this from totalWorkoutTime. -->
+                <TextView
+                    android:id="@+id/tvTotalTimeValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="-- min"
+                    android:textColor="#FFA33A"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/cardTotalCalories"
+                android:layout_width="0dp"
+                android:layout_height="118dp"
+                android:layout_marginStart="6dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_card_stats"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <TextView
+                    android:id="@+id/tvTotalCaloriesLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Total Calories"
+                    android:textColor="@android:color/white"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+                <!-- Placeholder only. Kotlin must set this from totalCalories / Health APIs. -->
+                <TextView
+                    android:id="@+id/tvTotalCaloriesValue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="-- kcal"
+                    android:textColor="#FFA33A"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/cardioMetricTabs"
+            android:layout_width="0dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/bg_spinner"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="4dp"
+            android:weightSum="3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardioStatsLayout">
+
+            <TextView
+                android:id="@+id/tabHeartRate"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/bg_orange_button"
+                android:gravity="center"
+                android:text="Heart Rate"
+                android:textColor="@android:color/black"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tabTime"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Time"
+                android:textColor="#C8B6A6"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tabCalories"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Calories"
+                android:textColor="#C8B6A6"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/cardioRangeTabs"
+            android:layout_width="0dp"
+            android:layout_height="38dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_spinner"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="4dp"
+            android:weightSum="3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardioMetricTabs">
+
+            <TextView
+                android:id="@+id/tabWeek"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/bg_orange_button"
+                android:gravity="center"
+                android:text="Week"
+                android:textColor="@android:color/black"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tabMonth"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Month"
+                android:textColor="#C8B6A6"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tabYear"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Year"
+                android:textColor="#C8B6A6"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/chartWeekStatsContainer"
+            android:layout_width="0dp"
+            android:layout_height="260dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_chart_container"
+            android:orientation="vertical"
+            android:padding="14dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardioRangeTabs">
+
+            <TextView
+                android:id="@+id/tvWeekStatsTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="WEEK STATS"
+                android:textColor="#B88432"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <!-- Kotlin must bind weeklyHeartRateData / weekly time / weekly calories into this chart. -->
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/chartWeekStats"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvHomeStreetTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="HOME &amp; STREET CARDIO"
+            android:textColor="@android:color/white"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/chartWeekStatsContainer" />
+
+        <LinearLayout
+            android:id="@+id/cardioExerciseList"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_progress_card"
+            android:orientation="vertical"
+            android:padding="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvHomeStreetTitle">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Easy Run — 30 min\nComfortable pace, conversational breathing."
+                android:textColor="#F4F0EA"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Jumping Jacks — 3 x 45 sec\nFull-body warm-up and cardio activation."
+                android:textColor="#F4F0EA"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Shadow Boxing — 5 min\nFocus on rhythm, breathing and technique."
+                android:textColor="#F4F0EA"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Jump Rope — 10 min\nSteady pace, light footwork."
+                android:textColor="#F4F0EA"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Brisk Walk — 20 min\nIdeal for recovery days."
+                android:textColor="#F4F0EA"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvSafetyTipsTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:text="TRAIN SMART - SAFETY TIPS"
+            android:textColor="@android:color/white"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardioExerciseList" />
+
+        <TextView
+            android:id="@+id/tvSafetyTips"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_progress_card"
+            android:lineSpacingExtra="4dp"
+            android:padding="16dp"
+            android:text="• Warm up for 5–10 minutes before training.&#10;• Don’t start at maximum intensity.&#10;• Stop immediately if you feel chest pain, dizziness, or joint pain.&#10;• Drink water regularly in small amounts.&#10;• Increase training duration gradually.&#10;• Stretch after every workout session."
+            android:textColor="#F4F0EA"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvSafetyTipsTitle" />
+
+        <TextView
+            android:id="@+id/tvTodaySummaryTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:text="TODAY'S SUMMARY"
+            android:textColor="@android:color/white"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvSafetyTips" />
+
+        <GridLayout
+            android:id="@+id/todaySummaryGrid"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="24dp"
+            android:columnCount="2"
+            android:rowCount="2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvTodaySummaryTitle">
+
+            <TextView
+                android:id="@+id/tvSummaryDistanceValue"
+                android:layout_width="0dp"
+                android:layout_height="72dp"
+                android:layout_columnWeight="1"
+                android:layout_marginEnd="6dp"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/bg_small_target"
+                android:gravity="center"
+                android:text="-- km\nDistance"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvSummaryStepsValue"
+                android:layout_width="0dp"
+                android:layout_height="72dp"
+                android:layout_columnWeight="1"
+                android:layout_marginStart="6dp"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/bg_small_target"
+                android:gravity="center"
+                android:text="--\nSteps"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvSummaryDurationValue"
+                android:layout_width="0dp"
+                android:layout_height="72dp"
+                android:layout_columnWeight="1"
+                android:layout_marginEnd="6dp"
+                android:background="@drawable/bg_small_target"
+                android:gravity="center"
+                android:text="-- min\nDuration"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvSummaryCaloriesValue"
+                android:layout_width="0dp"
+                android:layout_height="72dp"
+                android:layout_columnWeight="1"
+                android:layout_marginStart="6dp"
+                android:background="@drawable/bg_small_target"
+                android:gravity="center"
+                android:text="-- kcal\nCalories"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+        </GridLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

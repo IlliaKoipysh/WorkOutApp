@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@drawable/theme2">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Dark atmospheric overlay to match premium aesthetic -->
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="#A6000000"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <!-- TOP BAR -->
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_orange_button"
+            android:src="@drawable/ic_back"
+            android:contentDescription="Back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@android:color/black"/>
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Steps"
+            android:textColor="#FFFFFF"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:layout_marginStart="16dp"
+            app:layout_constraintStart_toEndOf="@id/btnBack"
+            app:layout_constraintTop_toTopOf="@id/btnBack"
+            app:layout_constraintBottom_toBottomOf="@id/btnBack"/>
+
+        <ImageButton
+            android:id="@+id/btnEdit"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/bg_brown_button"
+            android:src="@drawable/ic_edit"
+            android:contentDescription="Edit"
+            app:layout_constraintEnd_toStartOf="@id/btnSave"
+            app:layout_constraintTop_toTopOf="@id/btnBack"
+            app:tint="@android:color/black"/>
+
+        <ImageButton
+            android:id="@+id/btnSave"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/bg_brown_button"
+            android:src="@drawable/ic_save"
+            android:contentDescription="Save"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/btnBack"
+            app:tint="@android:color/black"/>
+
+        <!-- STATS CARDS -->
+
+        <!-- Steps Card -->
+        <LinearLayout
+            android:id="@+id/stepsCard"
+            android:layout_width="0dp"
+            android:layout_height="130dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="6dp"
+            android:layout_marginTop="28dp"
+            android:background="@drawable/bg_card_stats"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="8dp"
+            app:layout_constraintTop_toBottomOf="@id/btnBack"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/kmCard"
+            app:layout_constraintHorizontal_chainStyle="spread">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginBottom="8dp"
+                android:src="@drawable/ic_steps"
+                android:contentDescription="Steps Icon"/>
+
+            <TextView
+                android:id="@+id/tvStepsLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Steps"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="4dp"/>
+
+            <!-- Placeholder only. Kotlin must set this from currentSteps and targetSteps. -->
+            <TextView
+                android:id="@+id/tvStepsValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="6,234/8,000"
+                android:textColor="#E0E0E0"
+                android:textSize="13sp"/>
+        </LinearLayout>
+
+        <!-- Km Card -->
+        <LinearLayout
+            android:id="@+id/kmCard"
+            android:layout_width="0dp"
+            android:layout_height="130dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginEnd="6dp"
+            android:background="@drawable/bg_card_stats"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="8dp"
+            app:layout_constraintTop_toTopOf="@id/stepsCard"
+            app:layout_constraintStart_toEndOf="@id/stepsCard"
+            app:layout_constraintEnd_toStartOf="@id/caloriesCard">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginBottom="8dp"
+                android:src="@drawable/ic_distance"
+                android:contentDescription="Distance Icon"/>
+
+            <TextView
+                android:id="@+id/tvDistanceLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Km"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="4dp"/>
+
+            <!-- Placeholder only. Kotlin must set this from currentDistanceKm and targetDistanceKm. -->
+            <TextView
+                android:id="@+id/tvDistanceValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5.1/10"
+                android:textColor="#E0E0E0"
+                android:textSize="13sp"/>
+        </LinearLayout>
+
+        <!-- Calories Card -->
+        <LinearLayout
+            android:id="@+id/caloriesCard"
+            android:layout_width="0dp"
+            android:layout_height="130dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/bg_card_stats"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="8dp"
+            app:layout_constraintTop_toTopOf="@id/stepsCard"
+            app:layout_constraintStart_toEndOf="@id/kmCard"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginBottom="8dp"
+                android:src="@drawable/ic_calories"
+                android:contentDescription="Calories Icon"/>
+
+            <TextView
+                android:id="@+id/tvCaloriesLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Calories"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="4dp"/>
+
+            <!-- Placeholder only. Kotlin must set this from currentCalories and targetCalories. -->
+            <TextView
+                android:id="@+id/tvCaloriesValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2999/3000"
+                android:textColor="#E0E0E0"
+                android:textSize="13sp"/>
+        </LinearLayout>
+
+        <!-- FILTERS - Kotlin can later update selected/unselected backgrounds on click. -->
+        <LinearLayout
+            android:id="@+id/stepsMetricTabs"
+            android:layout_width="0dp"
+            android:layout_height="42dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/bg_spinner"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="4dp"
+            android:weightSum="3"
+            app:layout_constraintTop_toBottomOf="@id/stepsCard"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <TextView
+                android:id="@+id/btnFilterSteps"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/bg_orange_button"
+                android:gravity="center"
+                android:text="Steps"
+                android:textColor="@android:color/black"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/btnFilterDistance"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Distance"
+                android:textColor="#C8B6A6"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/btnFilterCalories"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Calories"
+                android:textColor="#C8B6A6"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/stepsRangeTabs"
+            android:layout_width="0dp"
+            android:layout_height="38dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/bg_spinner"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="4dp"
+            android:weightSum="3"
+            app:layout_constraintTop_toBottomOf="@id/stepsMetricTabs"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <TextView
+                android:id="@+id/btnRangeWeek"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/bg_orange_button"
+                android:gravity="center"
+                android:text="Week"
+                android:textColor="@android:color/black"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/btnRangeMonth"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Month"
+                android:textColor="#C8B6A6"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/btnRangeYear"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Year"
+                android:textColor="#C8B6A6"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- CHART CONTAINER -->
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/chartContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_chart_container"
+            android:padding="16dp"
+            app:layout_constraintTop_toBottomOf="@id/stepsRangeTabs"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <TextView
+                android:id="@+id/chartTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="WEEK STATS"
+                android:textColor="#B3A190"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <com.github.mikephil.charting.charts.BarChart
+                android:id="@+id/stepsChart"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:layout_marginTop="12dp"
+                app:layout_constraintTop_toBottomOf="@id/chartTitle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- TARGETS -->
+
+        <TextView
+            android:id="@+id/targetsTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Targets"
+            android:textColor="#FFFFFF"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            android:layout_marginTop="24dp"
+            app:layout_constraintTop_toBottomOf="@id/chartContainer"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <!-- Target Cards Chain -->
+
+        <LinearLayout
+            android:id="@+id/targetStepsCard"
+            android:layout_width="0dp"
+            android:layout_height="95dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="6dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_card_target"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="6dp"
+            app:layout_constraintTop_toBottomOf="@id/targetsTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/targetKmCard"
+            app:layout_constraintHorizontal_chainStyle="spread">
+
+            <TextView
+                android:id="@+id/tvTargetStepsValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="8K"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"/>
+
+            <TextView
+                android:id="@+id/tvTargetStepsLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Steps"
+                android:textColor="#CCCCCC"
+                android:textSize="13sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/targetKmCard"
+            android:layout_width="0dp"
+            android:layout_height="95dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginEnd="6dp"
+            android:background="@drawable/bg_card_target"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="6dp"
+            app:layout_constraintTop_toTopOf="@id/targetStepsCard"
+            app:layout_constraintStart_toEndOf="@id/targetStepsCard"
+            app:layout_constraintEnd_toStartOf="@id/targetCalCard">
+
+            <TextView
+                android:id="@+id/tvTargetDistanceValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="10"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"/>
+
+            <TextView
+                android:id="@+id/tvTargetDistanceLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="km"
+                android:textColor="#CCCCCC"
+                android:textSize="13sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/targetCalCard"
+            android:layout_width="0dp"
+            android:layout_height="95dp"
+            android:layout_marginStart="6dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/bg_card_target"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="6dp"
+            app:layout_constraintTop_toTopOf="@id/targetStepsCard"
+            app:layout_constraintStart_toEndOf="@id/targetKmCard"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <TextView
+                android:id="@+id/tvTargetCaloriesValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="3K"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"/>
+
+            <TextView
+                android:id="@+id/tvTargetCaloriesLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="calories"
+                android:textColor="#CCCCCC"
+                android:textSize="13sp"/>
+        </LinearLayout>
+
+        <!-- QUOTE -->
+
+        <TextView
+            android:id="@+id/quote"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="the body achieves what the mind believes"
+            android:textColor="#E0E0E0"
+            android:textSize="16sp"
+            android:textStyle="italic"
+            android:gravity="center"
+            android:layout_marginTop="28dp"
+            android:layout_marginBottom="32dp"
+            app:layout_constraintTop_toBottomOf="@id/targetStepsCard"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

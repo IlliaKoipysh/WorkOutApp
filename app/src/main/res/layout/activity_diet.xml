@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/dietRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/theme2"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <View
+            android:id="@+id/backgroundOverlay"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="#B0000000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/btnDietBack"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/bg_orange_button"
+            android:contentDescription="Back"
+            android:src="@drawable/ic_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@android:color/black" />
+
+        <TextView
+            android:id="@+id/tvDietTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_marginEnd="8dp"
+            android:text="Diet"
+            android:textColor="@android:color/white"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/btnDietBack"
+            app:layout_constraintEnd_toStartOf="@id/btnDietEdit"
+            app:layout_constraintStart_toEndOf="@id/btnDietBack"
+            app:layout_constraintTop_toTopOf="@id/btnDietBack" />
+
+        <ImageButton
+            android:id="@+id/btnDietEdit"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/bg_brown_button"
+            android:contentDescription="Edit"
+            android:src="@drawable/ic_edit"
+            app:layout_constraintEnd_toStartOf="@id/btnDietSave"
+            app:layout_constraintTop_toTopOf="@id/btnDietBack"
+            app:tint="@android:color/black" />
+
+        <ImageButton
+            android:id="@+id/btnDietSave"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/bg_brown_button"
+            android:contentDescription="Save"
+            android:src="@drawable/ic_save"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/btnDietBack"
+            app:tint="@android:color/black" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardCalorieCalculator"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            app:cardBackgroundColor="#CC111111"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="2dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnDietBack"
+            app:strokeColor="#CCF3A047"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/tvCalorieCalculatorTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="CALORIE INPUT"
+                    android:textColor="#F3A047"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <!-- Kotlin should read this input, add it to today's calorie cache, then refresh the Today and Weekly values. -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/etMealCalories"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/dropdown_background"
+                        android:hint="Meal calories"
+                        android:inputType="number"
+                        android:paddingStart="14dp"
+                        android:paddingEnd="14dp"
+                        android:textColor="@android:color/white"
+                        android:textColorHint="#BDBDBD"
+                        android:textSize="15sp" />
+
+                    <Button
+                        android:id="@+id/btnAddMealCalories"
+                        android:layout_width="88dp"
+                        android:layout_height="48dp"
+                        android:layout_marginStart="10dp"
+                        android:background="@drawable/bg_orange_button"
+                        android:text="Add"
+                        android:textAllCaps="false"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardTodayDiet"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            app:cardBackgroundColor="#CC111111"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="2dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardCalorieCalculator"
+            app:strokeColor="#99F3A047"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/tvTodayDietTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="TODAY"
+                    android:textColor="#F3A047"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <!-- Placeholder values only. Kotlin should set these from today's user input and workout/device data. -->
+                <TextView
+                    android:id="@+id/tvTodayFoodConsumedValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="42dp"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center_vertical"
+                    android:text="Food Consumed    -- kcal"
+                    android:textColor="@android:color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvTodayCaloriesBurnedValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="42dp"
+                    android:gravity="center_vertical"
+                    android:text="Calories Burned    -- kcal"
+                    android:textColor="#E0E0E0"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tvTodayDailyBalanceValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="42dp"
+                    android:gravity="center_vertical"
+                    android:text="Daily Balance    -- kcal"
+                    android:textColor="#F3A047"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvAverageDailyBalanceValue"
+                    android:layout_width="match_parent"
+                    android:layout_height="42dp"
+                    android:gravity="center_vertical"
+                    android:text="Average Daily Balance    -- kcal"
+                    android:textColor="#F3A047"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardWeeklyBalance"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            app:cardBackgroundColor="#CC111111"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="2dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardTodayDiet"
+            app:strokeColor="#99F3A047"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/tvWeeklyBalanceTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="WEEKLY BALANCE / 7 DAYS"
+                    android:textColor="#F3A047"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <!-- Placeholder balances only. Kotlin should set these from the weekly calorie history. -->
+                <GridLayout
+                    android:id="@+id/weeklyBalanceGrid"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:columnCount="7"
+                    android:rowCount="1">
+
+                    <TextView
+                        android:id="@+id/tvBalanceMon"
+                        android:layout_width="0dp"
+                        android:layout_height="64dp"
+                        android:layout_columnWeight="1"
+                        android:layout_marginEnd="4dp"
+                        android:background="@drawable/bg_small_target"
+                        android:gravity="center"
+                        android:text="Mon\n--"
+                        android:textColor="@android:color/white"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvBalanceTue"
+                        android:layout_width="0dp"
+                        android:layout_height="64dp"
+                        android:layout_columnWeight="1"
+                        android:layout_marginHorizontal="2dp"
+                        android:background="@drawable/bg_small_target"
+                        android:gravity="center"
+                        android:text="Tue\n--"
+                        android:textColor="@android:color/white"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvBalanceWed"
+                        android:layout_width="0dp"
+                        android:layout_height="64dp"
+                        android:layout_columnWeight="1"
+                        android:layout_marginHorizontal="2dp"
+                        android:background="@drawable/bg_small_target"
+                        android:gravity="center"
+                        android:text="Wed\n--"
+                        android:textColor="@android:color/white"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvBalanceThu"
+                        android:layout_width="0dp"
+                        android:layout_height="64dp"
+                        android:layout_columnWeight="1"
+                        android:layout_marginHorizontal="2dp"
+                        android:background="@drawable/bg_small_target"
+                        android:gravity="center"
+                        android:text="Thu\n--"
+                        android:textColor="@android:color/white"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvBalanceFri"
+                        android:layout_width="0dp"
+                        android:layout_height="64dp"
+                        android:layout_columnWeight="1"
+                        android:layout_marginHorizontal="2dp"
+                        android:background="@drawable/bg_small_target"
+                        android:gravity="center"
+                        android:text="Fri\n--"
+                        android:textColor="@android:color/white"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvBalanceSat"
+                        android:layout_width="0dp"
+                        android:layout_height="64dp"
+                        android:layout_columnWeight="1"
+                        android:layout_marginHorizontal="2dp"
+                        android:background="@drawable/bg_small_target"
+                        android:gravity="center"
+                        android:text="Sat\n--"
+                        android:textColor="@android:color/white"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvBalanceSun"
+                        android:layout_width="0dp"
+                        android:layout_height="64dp"
+                        android:layout_columnWeight="1"
+                        android:layout_marginStart="4dp"
+                        android:background="@drawable/bg_small_target"
+                        android:gravity="center"
+                        android:text="Sun\n--"
+                        android:textColor="@android:color/white"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </GridLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardNutritionTips"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:layout_marginBottom="26dp"
+            app:cardBackgroundColor="#CC111111"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="2dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardWeeklyBalance"
+            app:strokeColor="#99F3A047"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/tvNutritionTipsTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="NUTRITION TIPS"
+                    android:textColor="#F3A047"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvTipHealthyFats"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:text="Eat Healthy Fats\nHealthy fats support hormone function and help your body absorb vitamins."
+                    android:textColor="#F4F0EA"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/tvTipProtein"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:text="Eat Enough Protein\nProtein supports muscle repair and helps you stay full longer."
+                    android:textColor="#F4F0EA"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/tvTipFiber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:text="Eat More Fiber\nFiber supports digestion and helps control hunger."
+                    android:textColor="#F4F0EA"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/tvTipHydration"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:text="Stay Hydrated\nWater supports energy, digestion and workout performance."
+                    android:textColor="#F4F0EA"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/tvTipDontSkipMeals"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:text="Don't Skip Meals Too Often\nRegular meals can help avoid overeating later."
+                    android:textColor="#F4F0EA"
+                    android:textSize="15sp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
