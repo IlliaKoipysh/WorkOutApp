@@ -2,6 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -12,15 +19,32 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.App"
         tools:targetApi="31">
+
+        <activity android:name=".RegistrationActivity" />
+        <activity android:name=".SettingsActivity" />
+        <activity android:name=".DietActivity" />
+        <activity android:name=".LoseWeightActivity" />
+        <activity android:name=".BackActivity" />
+        <activity android:name=".LegsActivity" />
+        <activity android:name=".AbsActivity" />
+        <activity android:name=".TricepsChestActivity" />
+        <activity android:name=".BicepActivity" />
+        <activity android:name=".ExercisesActivity" />
+        <activity android:name=".ProgressActivity" />
+        <activity android:name=".CardioActivity" />
+        <activity android:name=".StepsActivity" />
+
         <activity
-            android:name=".MainActivity"
+            android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".MainActivity" />
+
     </application>
 
 </manifest>

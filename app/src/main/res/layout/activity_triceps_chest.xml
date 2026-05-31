@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/tricepsChestRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/theme2"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <View android:layout_width="0dp" android:layout_height="0dp" android:background="#B0000000" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" />
+        <ImageButton android:id="@+id/btnBack" android:layout_width="48dp" android:layout_height="48dp" android:background="@drawable/bg_orange_button" android:contentDescription="Back" android:src="@drawable/ic_back" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" app:tint="@android:color/black" />
+        <TextView android:id="@+id/tvTricepsChestTitle" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginStart="14dp" android:layout_marginEnd="8dp" android:text="Triceps &amp; Chest" android:textColor="@android:color/white" android:textSize="30sp" android:textStyle="bold" app:layout_constraintBottom_toBottomOf="@id/btnBack" app:layout_constraintEnd_toStartOf="@id/btnEdit" app:layout_constraintStart_toEndOf="@id/btnBack" app:layout_constraintTop_toTopOf="@id/btnBack" />
+        <ImageButton android:id="@+id/btnEdit" android:layout_width="48dp" android:layout_height="48dp" android:layout_marginEnd="10dp" android:background="@drawable/bg_brown_button" android:contentDescription="Edit" android:src="@drawable/ic_edit" app:layout_constraintEnd_toStartOf="@id/btnSave" app:layout_constraintTop_toTopOf="@id/btnBack" app:tint="@android:color/black" />
+        <ImageButton android:id="@+id/btnSave" android:layout_width="48dp" android:layout_height="48dp" android:background="@drawable/bg_brown_button" android:contentDescription="Save" android:src="@drawable/ic_save" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="@id/btnBack" app:tint="@android:color/black" />
+
+        <LinearLayout android:id="@+id/tricepsChestExerciseList" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_marginTop="28dp" android:orientation="vertical" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@id/btnBack">
+            <LinearLayout android:id="@+id/cardTricepsChestExercise1" android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@drawable/bg_exercise_detail_card" android:orientation="vertical" android:padding="14dp">
+                <TextView android:id="@+id/tvTricepsChestExercise1Title" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="1  PUSH-UPS" android:textColor="#F3A047" android:textSize="18sp" android:textStyle="bold" />
+                <ImageView android:id="@+id/imgTricepsChestExercise1" android:layout_width="match_parent" android:layout_height="150dp" android:layout_marginTop="12dp" android:contentDescription="Push-ups composite instruction" android:scaleType="centerCrop" android:src="@drawable/tricep1" />
+                <TextView android:id="@+id/tvTricepsChestExercise1Caption" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:gravity="center" android:text="START - LOWER - PUSH UP" android:textColor="#E0E0E0" android:textSize="13sp" android:textStyle="bold" />
+            </LinearLayout>
+            <LinearLayout android:id="@+id/cardTricepsChestExercise2" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:background="@drawable/bg_exercise_detail_card" android:orientation="vertical" android:padding="14dp">
+                <TextView android:id="@+id/tvTricepsChestExercise2Title" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="2  DIAMOND PUSH-UPS" android:textColor="#F3A047" android:textSize="18sp" android:textStyle="bold" />
+                <ImageView android:id="@+id/imgTricepsChestExercise2" android:layout_width="match_parent" android:layout_height="150dp" android:layout_marginTop="12dp" android:contentDescription="Diamond push-ups composite instruction" android:scaleType="centerCrop" android:src="@drawable/tricep2" />
+                <TextView android:id="@+id/tvTricepsChestExercise2Caption" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:gravity="center" android:text="HAND POSITION - LOWER - PUSH UP" android:textColor="#E0E0E0" android:textSize="13sp" android:textStyle="bold" />
+            </LinearLayout>
+            <LinearLayout android:id="@+id/cardTricepsChestExercise3" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:background="@drawable/bg_exercise_detail_card" android:orientation="vertical" android:padding="14dp">
+                <TextView android:id="@+id/tvTricepsChestExercise3Title" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="3  CHAIR DIPS" android:textColor="#F3A047" android:textSize="18sp" android:textStyle="bold" />
+                <ImageView android:id="@+id/imgTricepsChestExercise3" android:layout_width="match_parent" android:layout_height="150dp" android:layout_marginTop="12dp" android:contentDescription="Chair dips composite instruction" android:scaleType="centerCrop" android:src="@drawable/tricep3" />
+                <TextView android:id="@+id/tvTricepsChestExercise3Caption" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:gravity="center" android:text="START - LOWER - PUSH UP" android:textColor="#E0E0E0" android:textSize="13sp" android:textStyle="bold" />
+            </LinearLayout>
+            <LinearLayout android:id="@+id/cardTricepsChestExercise4" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:layout_marginBottom="28dp" android:background="@drawable/bg_exercise_detail_card" android:orientation="vertical" android:padding="14dp">
+                <TextView android:id="@+id/tvTricepsChestExercise4Title" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="4  INCLINE PUSH-UPS" android:textColor="#F3A047" android:textSize="18sp" android:textStyle="bold" />
+                <ImageView android:id="@+id/imgTricepsChestExercise4" android:layout_width="match_parent" android:layout_height="150dp" android:layout_marginTop="12dp" android:contentDescription="Incline push-ups composite instruction" android:scaleType="centerCrop" android:src="@drawable/tricep4" />
+                <TextView android:id="@+id/tvTricepsChestExercise4Caption" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:gravity="center" android:text="HANDS ELEVATED - LOWER - PUSH UP" android:textColor="#E0E0E0" android:textSize="13sp" android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

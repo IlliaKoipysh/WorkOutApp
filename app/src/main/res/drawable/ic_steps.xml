@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+  <!-- Left Foot Sole & Heel -->
+  <path
+      android:fillColor="#FFF3A047"
+      android:pathData="M9,9.5c-0.83,0 -1.5,1.12 -1.5,2.5s0.67,3.5 1.5,4.5c0.83,1 1.5,-1.12 1.5,-2.5s-0.67,-4.5 -1.5,-4.5z M9,17.5c-0.55,0 -1,0.67 -1,1.5s0.45,1.5 1,1.5 1,-0.67 1,-1.5 -0.45,-1.5 -1,-1.5z"/>
+  <!-- Left Foot Toes -->
+  <path
+      android:fillColor="#FFF3A047"
+      android:pathData="M7.5,7.75A0.75,0.75 0 1,1 7.5,6.25A0.75,0.75 0 1,1 7.5,7.75z M8.7,7.45A0.55,0.55 0 1,1 8.7,6.35A0.55,0.55 0 1,1 8.7,7.45z M9.7,7.55A0.45,0.45 0 1,1 9.7,6.65A0.45,0.45 0 1,1 9.7,7.55z M10.6,8.05A0.35,0.35 0 1,1 10.6,7.35A0.35,0.35 0 1,1 10.6,8.05z M11.4,8.75A0.25,0.25 0 1,1 11.4,8.25A0.25,0.25 0 1,1 11.4,8.75z"/>
+
+  <!-- Right Foot Sole & Heel (Shifted and Angled Slightly) -->
+  <path
+      android:fillColor="#FFF3A047"
+      android:pathData="M15,11.5c-0.83,0 -1.5,1.12 -1.5,2.5s0.67,3.5 1.5,4.5c0.83,1 1.5,-1.12 1.5,-2.5s-0.67,-4.5 -1.5,-4.5z M15,19.5c-0.55,0 -1,0.67 -1,1.5s0.45,1.5 1,1.5 1,-0.67 1,-1.5 -0.45,-1.5 -1,-1.5z"/>
+  <!-- Right Foot Toes -->
+  <path
+      android:fillColor="#FFF3A047"
+      android:pathData="M16.5,9.75A0.75,0.75 0 1,1 16.5,8.25A0.75,0.75 0 1,1 16.5,9.75z M15.3,9.45A0.55,0.55 0 1,1 15.3,8.35A0.55,0.55 0 1,1 15.3,9.45z M14.3,9.55A0.45,0.45 0 1,1 14.3,8.65A0.45,0.45 0 1,1 14.3,9.55z M13.4,10.05A0.35,0.35 0 1,1 13.4,9.35A0.35,0.35 0 1,1 13.4,10.05z M12.6,10.75A0.25,0.25 0 1,1 12.6,10.25A0.25,0.25 0 1,1 12.6,10.75z"/>
+</vector>
